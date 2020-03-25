@@ -6,9 +6,11 @@
  */
 package problem3.node;
 
-class Student{
-    private String name;
-    private int roll;
+
+public class Node {
+    String name;
+    int roll;
+    Node next;
 
     public String getName() {
         return name;
@@ -16,6 +18,10 @@ class Student{
 
     public int getRoll() {
         return roll;
+    }
+
+    public Node getNext() {
+        return next;
     }
 
     public void setName(String name) {
@@ -26,32 +32,7 @@ class Student{
         this.roll = roll;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", roll=" + roll +
-                '}';
-    }
-}
-
-public class Node {
-    Student stu;
-    Node next;
-
-    public void setStu(Student stu) {
-        this.stu = stu;
-    }
-
     public void setNext(Node next) {
         this.next = next;
-    }
-
-    public Student getStu() {
-        return stu;
-    }
-
-    public Node getNext() {
-        return next;
     }
 }
