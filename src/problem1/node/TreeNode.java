@@ -19,12 +19,12 @@ public class TreeNode {
         return data;
     }
 
-    public void setRight(TreeNode left){
-        this.left = left;
+    public void setRight(TreeNode right){
+        this.right = right;
     }
 
-    public void setLeft(TreeNode right){
-        this.right = right;
+    public void setLeft(TreeNode left){
+        this.left = left;
     }
 
     public TreeNode getLeft(){
