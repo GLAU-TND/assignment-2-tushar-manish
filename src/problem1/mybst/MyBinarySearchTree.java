@@ -11,9 +11,11 @@ import problem1.node.TreeNode;
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
     TreeNode root;
+    int count;
 
-    MyBinarySearchTree(){
+    public MyBinarySearchTree(){
         root = null;
+        count = 0;
     }
 
     public void insert(int data){
@@ -46,17 +48,41 @@ public class MyBinarySearchTree {
             }
         }
     }
-    public void inorder(TreeNode root){
+    private void LeftNode(TreeNode root){
         if(root == null)    return;
         else{
-            inorder(root.getLeft());
-            System.out.println(root.getdata());
-            inorder(root.getRight());
+            if(root.getLeft()!=null) System.out.println(root.getLeft().getdata());
+            else    count++;
+            LeftNode(root.getLeft());
+            LeftNode(root.getRight());
         }
     }
 
-    public void display(){
-        inorder(root);
+    public void printLeftNode(){
+        LeftNode(root);
     }
 
+    public void countNotLeft(){
+        System.out.println(count);
+    }
+
+    public void preorder(TreeNode root){
+        if(root == null)    return;
+        else{
+            preorder(root.getLeft());
+            System.out.println(root.getdata());
+            preorder(root.getRight());
+        }
+    }
+
+    public void postorder(TreeNode root){
+        if(root == null)    return;
+        else{
+            postorder(root.getRight());
+            System.out.println(root.getdata());
+            postorder(root.getRight());
+        }
+    }
+
+    public v
 }
