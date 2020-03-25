@@ -7,27 +7,41 @@
 package problem3.myqueue;
 
 import problem3.node.Node;
-import problem5.student.Student;
 
 public class MyPriorityQueue {
-    Node front;
-    Node rear;
-    MyPriorityQueue(){
-        front = null;
-        rear = null;
+    Node head;
+    public MyPriorityQueue(){
+        head = null;
     }
 
-    public void insert(Student st){
+    public void insert(String name,int roll){
         Node ns = new Node();
-        ns.setStu(st);
-        if(rear==null && front==null){
-            front = ns;
-            rear = ns;
+        ns.setName(name);
+        ns.setRoll(roll);
+        Node temp = head;
+        if(head==null){
+            head = ns;
         }
         else{
-            rear.setNext(ns);
-            rear = ns;
+            if(head.getRoll()>roll){
+                ns.setNext(head);
+                head = temp;
+            }
+            else{
+                while(temp.getNext()!=null && temp.getNext().getRoll()<roll){
+                    temp = temp.getNext();
+                }
+                ns.setNext(temp.getNext());
+                temp.setNext(ns);
+            }
         }
     }
 
+    public void display(){
+        Node temp = head;
+        while(temp!=null){
+            System.out.println(temp.getName()+"   "+temp.getRoll());
+            temp = temp.getNext();
+        }
+    }
 }
