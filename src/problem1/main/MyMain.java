@@ -17,7 +17,9 @@ public class MyMain {
         obj.insert(10);
         obj.insert(4);
         obj.insert(6);
-        obj.display();
-
+        System.out.println("ALL Left Nodes");
+        obj.printLeftNode();
+        System.out.println("Count of Nodes not having left node");
+        obj.countNotLeft();
     }
 }

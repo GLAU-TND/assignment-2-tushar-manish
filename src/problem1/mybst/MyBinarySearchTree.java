@@ -70,7 +70,7 @@ public class MyBinarySearchTree {
         if(root == null)    return;
         else{
             preorder(root.getLeft());
-            System.out.println(root.getdata());
+            System.out.print(root.getdata()+"\t");
             preorder(root.getRight());
         }
     }
@@ -79,10 +79,14 @@ public class MyBinarySearchTree {
         if(root == null)    return;
         else{
             postorder(root.getRight());
-            System.out.println(root.getdata());
-            postorder(root.getRight());
+            System.out.print(root.getdata()+"\t");
+            postorder(root.getLeft());
         }
     }
 
-    public v
+    public void preVSpost(){
+        postorder(root);
+        System.out.println();
+        preorder(root);
+    }
 }
