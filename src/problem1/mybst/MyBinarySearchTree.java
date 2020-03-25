@@ -24,9 +24,7 @@ public class MyBinarySearchTree {
         }
         else{
             TreeNode current = root;
-            TreeNode previous = null;
             while(true){
-                previous = current;
                 if(data > current.getdata()){
                     if(current.getRight()==null){
                         current.setRight(ns);
@@ -48,4 +46,17 @@ public class MyBinarySearchTree {
             }
         }
     }
+    public void inorder(TreeNode root){
+        if(root == null)    return;
+        else{
+            inorder(root.getLeft());
+            System.out.println(root.getdata());
+            inorder(root.getRight());
+        }
+    }
+
+    public void display(){
+        inorder(root);
+    }
+
 }
