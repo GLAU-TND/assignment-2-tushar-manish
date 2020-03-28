@@ -69,18 +69,19 @@ public class MyBinarySearchTree {
     public void preorder(TreeNode root){
         if(root == null)    return;
         else{
-            preorder(root.getLeft());
             System.out.print(root.getdata()+"\t");
+            preorder(root.getLeft());
             preorder(root.getRight());
+
         }
     }
 
     public void postorder(TreeNode root){
         if(root == null)    return;
         else{
+            postorder(root.getLeft());
             postorder(root.getRight());
             System.out.print(root.getdata()+"\t");
-            postorder(root.getLeft());
         }
     }
 
@@ -88,5 +89,9 @@ public class MyBinarySearchTree {
         postorder(root);
         System.out.println();
         preorder(root);
+    }
+
+    public TreeNode getroot(){
+        return root;
     }
 }
